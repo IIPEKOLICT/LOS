@@ -1,0 +1,3 @@
+rootProject.name = "Loshica OS"
+include ':app'
+include ':app:vendor'
