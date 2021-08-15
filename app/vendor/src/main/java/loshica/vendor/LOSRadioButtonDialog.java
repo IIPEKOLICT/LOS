@@ -82,7 +82,6 @@ public class LOSRadioButtonDialog extends DialogFragment {
             .setView(root)
             .setTitle(requireActivity().getResources().getText(title))
             .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
             .create();
 
         LOSUtils.dialog(dialog);

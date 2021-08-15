@@ -67,7 +67,6 @@ public class LOSAccentDialog extends DialogFragment implements View.OnClickListe
             .setView(root)
             .setTitle(requireActivity().getResources().getText(R.string.accent_section))
             .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
             .create();
 
         LOSUtils.dialog(dialog);
