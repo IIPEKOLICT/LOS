@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-//import loshica.R; // Loshica namespace
 import loshica.vendor.LOSSettingsActivity; // Settings activity
 import loshica.vendor.LOSTheme; // Theme engine
 
