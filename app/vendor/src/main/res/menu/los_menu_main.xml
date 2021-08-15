@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/los_action_settings"
         android:orderInCategory="100"
         android:title="@string/settings_action"
         android:icon="@drawable/ic_settings_icon"

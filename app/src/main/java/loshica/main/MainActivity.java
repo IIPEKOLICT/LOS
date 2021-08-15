@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_settings) {
+        if (item.getItemId() == R.id.los_action_settings) {
             // Method to open settings activity
             startActivity(new Intent(this.getApplicationContext(), LOSSettingsActivity.class));
             //
