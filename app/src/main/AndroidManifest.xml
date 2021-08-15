@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="loshica">
+    package="loshica.main">
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,7 @@
         android:theme="@style/LOSTheme_Black"
         tools:replace="android:icon"
         tools:ignore="AllowBackup">
-        <activity android:name=".main.MainActivity">
+        <activity android:name="loshica.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +20,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".vendor.LOSSettingsActivity"
+            android:name="loshica.vendor.LOSSettingsActivity"
             android:label="@string/settings_label"
-            android:parentActivityName=".main.MainActivity">
+            android:parentActivityName="loshica.main.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="loshica.main.MainActivity" />

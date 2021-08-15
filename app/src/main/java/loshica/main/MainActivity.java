@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import loshica.R; // Loshica namespace
+//import loshica.R; // Loshica namespace
 import loshica.vendor.LOSSettingsActivity; // Settings activity
 import loshica.vendor.LOSTheme; // Theme engine
 
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Instal theme, when activity created
+        // Install theme, when activity created
         theme = new LOSTheme(this).current;
         setTheme(theme);
         //
