@@ -17,12 +17,12 @@
 
     <!-- Материнская темная тема -->
 
-    <style name="LOSTheme_BaseDark" parent="Theme.AppCompat">
+    <style name="LOSTheme_BaseDark" parent="Theme.MaterialComponents">
         <item name="android:statusBarColor">@color/black</item>
         <item name="actionBarStyle">@style/LOSActionBarStyle</item>
-        <item name="android:actionBarStyle">@style/LOSActionBarStyle</item>
-        <item name="buttonStyle">@style/LOSButtonStyle</item>
+        <item name="materialButtonStyle">@style/LOSButtonStyle</item>
         <item name="dialogCornerRadius">@dimen/base_corner</item>
+<!--        <item name="android:switchStyle">@style/LOSSwitchStyle</item>-->
         <item name="android:windowContentOverlay">@drawable/actionbar_shadow_dark</item>
 
         <item name="secondaryAlpha">@dimen/secondary_alpha</item>
@@ -94,10 +94,10 @@
 
     <!-- Материнская светлая тема -->
 
-    <style name="LOSTheme_BaseLight" parent="Theme.AppCompat.Light">
+    <style name="LOSTheme_BaseLight" parent="Theme.MaterialComponents.Light">
         <item name="android:statusBarColor">@color/black</item>
         <item name="actionBarStyle">@style/LOSActionBarStyle</item>
-        <item name="buttonStyle">@style/LOSButtonStyle</item>
+        <item name="materialButtonStyle">@style/LOSButtonStyle</item>
         <item name="dialogCornerRadius">@dimen/base_corner</item>
 
         <item name="secondaryAlpha">@dimen/secondary_alpha</item>

@@ -6,15 +6,6 @@
         <item name="android:layout_weight">1</item>
         <item name="android:background">@drawable/button_bg</item>
         <item name="android:textColor">?attr/mainTextColor</item>
-    </style>
-
-    <style name="LOSMaterialButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/button_bg</item>
-        <item name="android:textColor">?attr/mainTextColor</item>
         <item name="android:textAppearanceButton">@id/center</item>
     </style>
 
@@ -26,7 +17,7 @@
         <item name="android:padding">@dimen/small_padding</item>
     </style>
 
-    <style name="LOSSectionHeaderStyle" parent="Widget.AppCompat.TextView">
+    <style name="LOSSectionHeaderStyle" parent="Widget.MaterialComponents.TextView">
         <item name="android:padding">@dimen/base_padding</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -41,7 +32,7 @@
         <item name="android:textColor">?attr/mainTextColor</item>
     </style>
 
-    <style name="LOSColoredBthStyle" parent="Widget.AppCompat.TextView">
+    <style name="LOSColoredBthStyle" parent="Widget.MaterialComponents.TextView">
         <item name="android:textColor">@color/colored_btn_text</item>
     </style>
 
@@ -52,16 +43,21 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
-    <style name="LOSSwitchStyle" parent="Widget.MaterialComponents.Slider">
-        <item name="android:switchPadding">@dimen/small_padding</item>
-        <item name="android:track">@drawable/switch_track</item>
-    </style>
+<!--    <style name="LOSSwitchStyle" parent="Widget.MaterialComponents.Slider">-->
+<!--        <item name="android:switchPadding">@dimen/small_padding</item>-->
+<!--        <item name="android:track">@drawable/switch_track</item>-->
+<!--    </style>-->
+
+<!--    <style name="LOSSwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">-->
+<!--        <item name="android:switchPadding">@dimen/small_padding</item>-->
+<!--        <item name="android:track">@drawable/switch_track</item>-->
+<!--    </style>-->
 
     <style name="LOSActionBarStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
         <item name="background">?attr/mainBgColor</item>
     </style>
 
-    <style name="LOSPreference" parent="Widget.AppCompat.TextView">
+    <style name="LOSPreference" parent="Widget.MaterialComponents.TextView">
         <item name="android:padding">@dimen/base_padding</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@color/preference_bg</item>

@@ -1,4 +1,4 @@
-package loshica.vendor
+package loshica.vendor.view
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -11,6 +11,9 @@ import android.widget.CheckedTextView
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import loshica.vendor.LOSUtils
+import loshica.vendor.R
+import loshica.vendor.viewModel.LOSTheme
 
 class LOSAccentDialog : DialogFragment(), View.OnClickListener {
 
@@ -33,8 +36,8 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener {
         themeMode = settings?.getInt(LOSTheme.THEME_KEY, LOSTheme.THEME_DEFAULT)!!
         dark = if (themeMode == 0) LOSTheme.isSystemDark else themeMode < 2
         table = root.findViewById(R.id.accent_root)
-        row1 = table?.getChildAt(0)!! as RadioGroup
-        row2 = table?.getChildAt(1)!! as RadioGroup
+        row1 = table?.getChildAt(0) as RadioGroup
+        row2 = table?.getChildAt(1) as RadioGroup
         lp = RadioGroup.LayoutParams(120, 120)
 
         for (i in 0 until LOSTheme.coloredBgs.size - 1) {
@@ -50,7 +53,7 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener {
             )
             button.setOnClickListener(this)
 
-            if (settings?.getInt(LOSTheme.ACCENT_KEY, LOSTheme.ACCENT_DEFAULT)!! == i) {
+            if (settings?.getInt(LOSTheme.ACCENT_KEY, LOSTheme.ACCENT_DEFAULT) == i) {
                 button.isChecked = true
             }
             if (i - 6 < 0) row1!!.addView(button, lp) else row2!!.addView(button, lp)

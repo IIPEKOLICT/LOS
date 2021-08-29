@@ -5,9 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CheckedTextView
 import androidx.appcompat.app.AppCompatActivity
-import loshica.vendor.LOSAccentDialog.LOSAccentDialogListener
-import loshica.vendor.LOSRadioBtnDialog.Companion.newInstance
-import loshica.vendor.LOSRadioBtnDialog.LOSRadioBtnDialogListener
+import loshica.vendor.view.LOSAccentDialog.LOSAccentDialogListener
+import loshica.vendor.view.LOSRadioBtnDialog.Companion.newInstance
+import loshica.vendor.view.LOSRadioBtnDialog.LOSRadioBtnDialogListener
+import loshica.vendor.view.LOSAboutDialog
+import loshica.vendor.view.LOSAccentDialog
+import loshica.vendor.view.LOSRadioBtnDialog
+import loshica.vendor.viewModel.LOSTheme
 
 class LOSSettingsActivity : AppCompatActivity(),
     View.OnClickListener, LOSRadioBtnDialogListener, LOSAccentDialogListener {

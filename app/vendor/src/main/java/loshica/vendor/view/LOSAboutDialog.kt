@@ -1,9 +1,11 @@
-package loshica.vendor
+package loshica.vendor.view
 
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import loshica.vendor.LOSUtils
+import loshica.vendor.R
 
 class LOSAboutDialog : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

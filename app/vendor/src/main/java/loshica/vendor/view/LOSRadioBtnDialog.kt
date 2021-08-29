@@ -1,4 +1,4 @@
-package loshica.vendor
+package loshica.vendor.view
 
 import android.app.Dialog
 import android.content.Context
@@ -8,6 +8,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import loshica.vendor.LOSUtils
+import loshica.vendor.R
 
 class LOSRadioBtnDialog : DialogFragment() {
 

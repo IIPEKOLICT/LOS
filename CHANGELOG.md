@@ -1,8 +1,8 @@
 #Changelog:
 
 ### 2.0
+- new install theme to activity method
 - more correct styles names
-- migrate to Material style
 - migrate to MVVM pattern
 - migrate to Kotlin
 

@@ -1,8 +1,9 @@
-package loshica.vendor
+package loshica.vendor.viewModel
 
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import loshica.vendor.R
 
 class LOSTheme(activity: Activity) {
 
