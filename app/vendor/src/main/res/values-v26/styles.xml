@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="SectionHeaderStyle" parent="Widget.AppCompat.TextView">
+    <style name="LOSSectionHeaderStyle" parent="Widget.AppCompat.TextView">
         <item name="android:paddingTop">@dimen/base_padding</item>
         <item name="android:paddingBottom">@dimen/small_padding</item>
         <item name="android:paddingHorizontal">@dimen/base_padding</item>

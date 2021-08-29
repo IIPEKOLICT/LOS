@@ -12,7 +12,7 @@
         android:theme="@style/LOSTheme_Black"
         tools:replace="android:icon"
         tools:ignore="AllowBackup">
-        <activity android:name="loshica.main.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +22,10 @@
         <activity
             android:name="loshica.vendor.LOSSettingsActivity"
             android:label="@string/settings_label"
-            android:parentActivityName="loshica.main.MainActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="loshica.main.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
     </application>
 

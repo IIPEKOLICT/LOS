@@ -1,5 +1,5 @@
 <resources>
-    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="LOSButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:layout_margin">20dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -8,7 +8,7 @@
         <item name="android:textColor">?attr/mainTextColor</item>
     </style>
 
-    <style name="MaterialButtonStyle" parent="Widget.MaterialComponents.Button">
+    <style name="LOSMaterialButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_margin">20dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -18,15 +18,15 @@
         <item name="android:textAppearanceButton">@id/center</item>
     </style>
 
-    <style name="SectionStyle">
+    <style name="LOSSectionStyle">
         <item name="android:layout_margin">20dp</item>
     </style>
 
-    <style name="RadioGroupStyle">
+    <style name="LOSRadioGroupStyle">
         <item name="android:padding">@dimen/small_padding</item>
     </style>
 
-    <style name="SectionHeaderStyle" parent="Widget.AppCompat.TextView">
+    <style name="LOSSectionHeaderStyle" parent="Widget.AppCompat.TextView">
         <item name="android:padding">@dimen/base_padding</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -35,29 +35,29 @@
         <item name="android:textSize">@dimen/base_text</item>
     </style>
 
-    <style name="RadioButtonDefaultPar" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="LOSRadioButtonDefaultPar" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/mainTextColor</item>
     </style>
 
-    <style name="ColoredBthStyle" parent="Widget.AppCompat.TextView">
+    <style name="LOSColoredBthStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/colored_btn_text</item>
     </style>
 
-    <style name="ListDivider">
+    <style name="LOSListDivider">
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
-    <style name="SwitchStyle" parent="Widget.MaterialComponents.Slider">
+    <style name="LOSSwitchStyle" parent="Widget.MaterialComponents.Slider">
         <item name="android:switchPadding">@dimen/small_padding</item>
         <item name="android:track">@drawable/switch_track</item>
     </style>
 
-    <style name="ActionBarStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
+    <style name="LOSActionBarStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
         <item name="background">?attr/mainBgColor</item>
     </style>
 

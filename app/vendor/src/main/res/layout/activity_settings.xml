@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/theme_group_header"
-        android:theme="@style/SectionHeaderStyle"
+        android:theme="@style/LOSSectionHeaderStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +35,7 @@
 
     <View
         android:id="@+id/divider1"
-        style="@style/ListDivider"
+        style="@style/LOSListDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/other_group_header"
-        android:theme="@style/SectionHeaderStyle"
+        android:theme="@style/LOSSectionHeaderStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dark" />
 
