@@ -16,11 +16,11 @@ import loshica.vendor.viewModel.LOSTheme
 class LOSSettingsActivity : AppCompatActivity(),
     View.OnClickListener, LOSRadioBtnDialogListener, LOSAccentDialogListener {
 
-    private var accentDialog: LOSAccentDialog? = null
-    private var themeDialog: LOSRadioBtnDialog? = null
-    private var accentView: CheckedTextView? = null
-    private var darkView: CheckedTextView? = null
-    private var aboutView: CheckedTextView? = null
+    private lateinit var accentDialog: LOSAccentDialog
+    private lateinit var themeDialog: LOSRadioBtnDialog
+    private lateinit var accentView: CheckedTextView
+    private lateinit var darkView: CheckedTextView
+    private lateinit var aboutView: CheckedTextView
     private var settings: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,16 +34,16 @@ class LOSSettingsActivity : AppCompatActivity(),
         darkView = findViewById(R.id.dark)
         aboutView = findViewById(R.id.about)
 
-        accentView?.setOnClickListener(this)
-        darkView?.setOnClickListener(this)
-        aboutView?.setOnClickListener(this)
+        accentView.setOnClickListener(this)
+        darkView.setOnClickListener(this)
+        aboutView.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.accent -> {
                 accentDialog = LOSAccentDialog()
-                accentDialog!!.show(supportFragmentManager, null)
+                accentDialog.show(supportFragmentManager, null)
             }
             R.id.dark -> {
                 themeDialog = newInstance(
@@ -53,7 +53,7 @@ class LOSSettingsActivity : AppCompatActivity(),
                     R.string.theme_section,
                     settings!!.getInt(LOSTheme.THEME_KEY, LOSTheme.THEME_DEFAULT)
                 )
-                themeDialog!!.show(supportFragmentManager, null)
+                themeDialog.show(supportFragmentManager, null)
             }
             else -> LOSAboutDialog().show(supportFragmentManager, null)
         }
@@ -63,7 +63,7 @@ class LOSSettingsActivity : AppCompatActivity(),
         val editor = settings!!.edit()
         editor.putInt(key, value)
         editor.apply()
-        themeDialog!!.dismiss()
+        themeDialog.dismiss()
         recreate()
     }
 
@@ -71,7 +71,7 @@ class LOSSettingsActivity : AppCompatActivity(),
         val editor = settings!!.edit()
         editor.putInt(LOSTheme.ACCENT_KEY, value)
         editor.apply()
-        accentDialog!!.dismiss()
+        accentDialog.dismiss()
         recreate()
     }
 }
