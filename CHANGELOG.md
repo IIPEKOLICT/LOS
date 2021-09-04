@@ -1,6 +1,7 @@
 # Changelog:
 
 ### 2.1
+- migrate to true MVVM implementation
 - migrate to view binding
 - code refactoring
 

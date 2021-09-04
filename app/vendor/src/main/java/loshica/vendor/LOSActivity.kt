@@ -2,21 +2,21 @@ package loshica.vendor
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import loshica.vendor.viewModel.LOSTheme
 
 open class LOSActivity : AppCompatActivity() {
     // Standart loshica os activity
 
-    private var appTheme = 0 // Var for check theme
+    private lateinit var themeModel: LOSTheme
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Install theme, when activity created
-        appTheme = LOSTheme(this).current
-        setTheme(appTheme)
+        themeModel = ViewModelProvider(this).get(LOSTheme::class.java)
+        themeModel.current.value?.let { setTheme(it) }
         //
 
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ open class LOSActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         // If theme changed -> apply new theme
-        if (appTheme != LOSTheme(this).current) recreate()
+        themeModel.check(this)
         //
     }
 

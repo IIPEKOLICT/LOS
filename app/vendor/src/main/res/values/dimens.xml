@@ -6,5 +6,5 @@
     <dimen name="base_text">16sp</dimen>
 
     <dimen name="about_logo">150dp</dimen>
-    <dimen name="dialog_elevation">0dp</dimen>
+    <dimen name="dialog_elevation">4dp</dimen>
 </resources>

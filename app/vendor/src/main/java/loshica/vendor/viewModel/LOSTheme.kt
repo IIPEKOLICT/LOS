@@ -1,11 +1,14 @@
 package loshica.vendor.viewModel
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import loshica.vendor.R
 
-class LOSTheme(activity: Activity) {
+class LOSTheme(val app: Application) : AndroidViewModel(app) {
 
     private val darkThemes = intArrayOf(
         R.style.LOSTheme_BlackOxygen,
@@ -36,15 +39,19 @@ class LOSTheme(activity: Activity) {
         R.style.LOSTheme_LightBlack
     )
 
-    var settings: SharedPreferences = activity.getSharedPreferences(SETTINGS, Context.MODE_PRIVATE)
-    var current: Int
+    var settings: SharedPreferences = app.getSharedPreferences(SETTINGS, Context.MODE_PRIVATE)
 
-    private operator fun set(theme: Int, accent: Int, activity: Activity): Int {
-        isSystemDark = activity.resources.configuration.uiMode > 24
-        return when (theme) {
-            0 -> if (isSystemDark) darkThemes[accent] else lightThemes[accent]
-            1 -> darkThemes[accent]
-            else -> lightThemes[accent]
+    val theme: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
+    val accent: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
+    val current: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
+    val isDark: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
+
+    private fun set(): Int {
+        isSystemDark = app.resources.configuration.uiMode > 24
+        return when (theme.value) {
+            0 -> if (isSystemDark) darkThemes[accent.value!!] else lightThemes[accent.value!!]
+            1 -> darkThemes[accent.value!!]
+            else -> lightThemes[accent.value!!]
         }
     }
 
@@ -55,28 +62,36 @@ class LOSTheme(activity: Activity) {
         const val ACCENT_DEFAULT = 2
         const val THEME_DEFAULT = 0
 
-        val coloredBgs = intArrayOf(
-            R.drawable.los_colored_btn_bg_oxygen,
-            R.drawable.los_colored_btn_bg_violet,
-            R.drawable.los_colored_btn_bg_red,
-            R.drawable.los_colored_btn_bg_brown,
-            R.drawable.los_colored_btn_bg_cyan,
-            R.drawable.los_colored_btn_bg_dblue,
-            R.drawable.los_colored_btn_bg_orange,
-            R.drawable.los_colored_btn_bg_pink,
-            R.drawable.los_colored_btn_bg_dgreen,
-            R.drawable.los_colored_btn_bg_lgreen,
-            R.drawable.los_colored_btn_bg_aosp,
-            R.drawable.los_colored_btn_bg_black,
-            R.drawable.los_colored_btn_bg_white
-        )
         var isSystemDark = false
     }
 
     init {
-        val theme = settings.getInt(THEME_KEY, THEME_DEFAULT)
-        val accent = settings.getInt(ACCENT_KEY, ACCENT_DEFAULT)
-        current = set(theme, accent, activity)
-        activity.setTheme(current)
+        theme.value = settings.getInt(THEME_KEY, THEME_DEFAULT)
+        accent.value = settings.getInt(ACCENT_KEY, ACCENT_DEFAULT)
+        current.value = set()
+        isDark.value = if (theme.value == 0) isSystemDark else theme.value!! < 2
+    }
+
+    fun check(activity: Activity) {
+        if (accent.value != settings.getInt(ACCENT_KEY, ACCENT_DEFAULT)) {
+            accent.value = settings.getInt(ACCENT_KEY, ACCENT_DEFAULT)
+        }
+
+        if (theme.value != settings.getInt(THEME_KEY, THEME_DEFAULT)) {
+            theme.value = settings.getInt(THEME_KEY, THEME_DEFAULT)
+        }
+
+        val prev = current.value
+        current.value = set()
+
+        if (prev != set()) activity.recreate()
+    }
+
+    fun change(key: String, value: Int) {
+        when (key) {
+            THEME_KEY -> theme.value = value
+            ACCENT_KEY -> accent.value = value
+        }
+        current.value = set()
     }
 }
