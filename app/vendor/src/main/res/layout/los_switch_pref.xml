@@ -7,5 +7,5 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:thumb="@drawable/switch_pref_thumb"
-    android:track="@drawable/switch_pref_track"/>
+    android:thumb="@drawable/los_switch_pref_thumb"
+    android:track="@drawable/los_switch_pref_track"/>

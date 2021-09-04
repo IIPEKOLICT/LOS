@@ -23,12 +23,14 @@
         <item name="materialButtonStyle">@style/LOSButtonStyle</item>
         <item name="dialogCornerRadius">@dimen/base_corner</item>
 <!--        <item name="android:switchStyle">@style/LOSSwitchStyle</item>-->
-        <item name="android:windowContentOverlay">@drawable/actionbar_shadow_dark</item>
+        <item name="android:windowContentOverlay">@drawable/los_actionbar_shadow_dark</item>
 
         <item name="secondaryAlpha">@dimen/secondary_alpha</item>
         <item name="disabledAlpha">@dimen/disabled_alpha</item>
 
         <item name="android:textSize">@dimen/base_text</item>
+
+        <item name="materialAlertDialogTheme">@style/LOSDialog</item>
     </style>
 
     <!-- Черная тема -->
@@ -104,6 +106,8 @@
         <item name="disabledAlpha">@dimen/disabled_alpha</item>
 
         <item name="android:textSize">@dimen/base_text</item>
+
+        <item name="materialAlertDialogTheme">@style/LOSDialog</item>
     </style>
 
     <!-- Светлая тема -->

@@ -9,35 +9,30 @@ import android.view.Gravity
 import android.view.View
 import android.widget.CheckedTextView
 import android.widget.RadioGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import loshica.vendor.LOSUtils
 import loshica.vendor.R
+import loshica.vendor.databinding.LosDialogAccentBinding
+import loshica.vendor.interfaces.LOSDialogChangeSettings
 import loshica.vendor.viewModel.LOSTheme
 
-class LOSAccentDialog : DialogFragment(), View.OnClickListener {
+class LOSAccentDialog : DialogFragment(), View.OnClickListener, LOSDialogChangeSettings {
+
+    private var _b: LosDialogAccentBinding? = null
+    private val b get() = _b!!
 
     private var themeMode = 0
     private var dark = false
-    private var settings: SharedPreferences? = null
-    private var table: RadioGroup? = null
-    private var row1: RadioGroup? = null
-    private var row2: RadioGroup? = null
-    private var lp: RadioGroup.LayoutParams? = null
-    private var listener: LOSAccentDialogListener? = null
+    private lateinit var settings: SharedPreferences
+    private lateinit var lp: RadioGroup.LayoutParams
 
     @SuppressLint("ResourceType")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val builder = AlertDialog.Builder(requireActivity())
-        val inflater = requireActivity().layoutInflater
-        val root = inflater.inflate(R.layout.dialog_accent, null)
+        val builder = LOSDialogBuilder(requireActivity())
+        _b = LosDialogAccentBinding.inflate(requireActivity().layoutInflater)
 
         settings = requireActivity().getSharedPreferences(LOSTheme.SETTINGS, Context.MODE_PRIVATE)
-        themeMode = settings?.getInt(LOSTheme.THEME_KEY, LOSTheme.THEME_DEFAULT)!!
+        themeMode = settings.getInt(LOSTheme.THEME_KEY, LOSTheme.THEME_DEFAULT)
         dark = if (themeMode == 0) LOSTheme.isSystemDark else themeMode < 2
-        table = root.findViewById(R.id.accent_root)
-        row1 = table?.getChildAt(0) as RadioGroup
-        row2 = table?.getChildAt(1) as RadioGroup
         lp = RadioGroup.LayoutParams(120, 120)
 
         for (i in 0 until LOSTheme.coloredBgs.size - 1) {
@@ -53,36 +48,32 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener {
             )
             button.setOnClickListener(this)
 
-            if (settings?.getInt(LOSTheme.ACCENT_KEY, LOSTheme.ACCENT_DEFAULT) == i) {
+            if (settings.getInt(LOSTheme.ACCENT_KEY, LOSTheme.ACCENT_DEFAULT) == i) {
                 button.isChecked = true
             }
-            if (i - 6 < 0) row1!!.addView(button, lp) else row2!!.addView(button, lp)
+            if (i - 6 < 0) b.row0.addView(button, lp) else b.row1.addView(button, lp)
         }
 
-        val dialog: Dialog = builder
-            .setView(root)
+        return builder
+            .setView(b.root)
             .setTitle(requireActivity().resources.getText(R.string.accent_section))
-            .setPositiveButton(R.string.ok, null)
             .create()
+    }
 
-        LOSUtils.dialog(dialog)
-        return dialog
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _b = null
     }
 
     override fun onClick(v: View) {
-        listener!!.setAccent(v.id)
+        changeSettings(LOSTheme.ACCENT_KEY, v.id)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        listener = try {
-            context as LOSAccentDialogListener
-        } catch (e: ClassCastException) {
-            throw ClassCastException(context.toString() + e)
-        }
-    }
-
-    interface LOSAccentDialogListener {
-        fun setAccent(value: Int)
+    override fun changeSettings(key: String, value: Int) {
+        val editor = settings.edit()
+        editor.putInt(key, value)
+        editor.apply()
+        this.dismiss()
+        requireActivity().recreate()
     }
 }

@@ -2,6 +2,7 @@ package loshica.vendor
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +22,8 @@ open class LOSActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         // If theme changed -> apply new theme
         if (appTheme != LOSTheme(this).current) recreate()
         //

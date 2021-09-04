@@ -4,7 +4,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:background">@drawable/los_button_bg</item>
         <item name="android:textColor">?attr/mainTextColor</item>
         <item name="android:textAppearanceButton">@id/center</item>
     </style>
@@ -33,7 +33,7 @@
     </style>
 
     <style name="LOSColoredBthStyle" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textColor">@color/colored_btn_text</item>
+        <item name="android:textColor">@color/los_colored_btn_text</item>
     </style>
 
     <style name="LOSListDivider">
@@ -45,12 +45,12 @@
 
 <!--    <style name="LOSSwitchStyle" parent="Widget.MaterialComponents.Slider">-->
 <!--        <item name="android:switchPadding">@dimen/small_padding</item>-->
-<!--        <item name="android:track">@drawable/switch_track</item>-->
+<!--        <item name="android:track">@drawable/los_switch_track</item>-->
 <!--    </style>-->
 
 <!--    <style name="LOSSwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">-->
 <!--        <item name="android:switchPadding">@dimen/small_padding</item>-->
-<!--        <item name="android:track">@drawable/switch_track</item>-->
+<!--        <item name="android:track">@drawable/los_switch_track</item>-->
 <!--    </style>-->
 
     <style name="LOSActionBarStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
@@ -60,6 +60,10 @@
     <style name="LOSPreference" parent="Widget.MaterialComponents.TextView">
         <item name="android:padding">@dimen/base_padding</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:background">@color/preference_bg</item>
+        <item name="android:background">@color/los_preference_bg</item>
+    </style>
+
+    <style name="LOSDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog.Centered">
+        <item name="android:windowElevation">@dimen/dialog_elevation</item>
     </style>
 </resources>

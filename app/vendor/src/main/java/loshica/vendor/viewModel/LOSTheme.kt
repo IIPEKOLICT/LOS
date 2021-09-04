@@ -56,19 +56,19 @@ class LOSTheme(activity: Activity) {
         const val THEME_DEFAULT = 0
 
         val coloredBgs = intArrayOf(
-            R.drawable.colored_btn_bg_oxygen,
-            R.drawable.colored_btn_bg_violet,
-            R.drawable.colored_btn_bg_red,
-            R.drawable.colored_btn_bg_brown,
-            R.drawable.colored_btn_bg_cyan,
-            R.drawable.colored_btn_bg_dblue,
-            R.drawable.colored_btn_bg_orange,
-            R.drawable.colored_btn_bg_pink,
-            R.drawable.colored_btn_bg_dgreen,
-            R.drawable.colored_btn_bg_lgreen,
-            R.drawable.colored_btn_bg_aosp,
-            R.drawable.colored_btn_bg_black,
-            R.drawable.colored_btn_bg_white
+            R.drawable.los_colored_btn_bg_oxygen,
+            R.drawable.los_colored_btn_bg_violet,
+            R.drawable.los_colored_btn_bg_red,
+            R.drawable.los_colored_btn_bg_brown,
+            R.drawable.los_colored_btn_bg_cyan,
+            R.drawable.los_colored_btn_bg_dblue,
+            R.drawable.los_colored_btn_bg_orange,
+            R.drawable.los_colored_btn_bg_pink,
+            R.drawable.los_colored_btn_bg_dgreen,
+            R.drawable.los_colored_btn_bg_lgreen,
+            R.drawable.los_colored_btn_bg_aosp,
+            R.drawable.los_colored_btn_bg_black,
+            R.drawable.los_colored_btn_bg_white
         )
         var isSystemDark = false
     }

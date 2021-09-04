@@ -1,3 +1,4 @@
 rootProject.name = "Loshica OS"
 include ':app'
 include ':app:vendor'
+include ':app:test'

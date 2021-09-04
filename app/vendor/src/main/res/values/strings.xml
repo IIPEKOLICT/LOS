@@ -17,12 +17,6 @@
     <string name="accent_section">Цвет акцента</string>
     <string name="theme_section">Тема</string>
 
-<!--    <string name="ui_section_header">Удобство использования</string>-->
-<!--    <string name="oneui_mode_primary">Режим OneUI</string>-->
-<!--    <string name="oneui_mode_secondary">Шапка на пол экрана</string>-->
-<!--    <string name="oneui_style_primary">Шапка по центру</string>-->
-<!--    <string name="oneui_style_secondary">Как на сосунгах</string>-->
-
     <string name="other_group_header">Другое</string>
 
     <string name="about_section">Информация</string>

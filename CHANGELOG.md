@@ -1,4 +1,8 @@
-#Changelog:
+# Changelog:
+
+### 2.1
+- migrate to view binding
+- code refactoring
 
 ### 2.0
 - new install theme to activity method
