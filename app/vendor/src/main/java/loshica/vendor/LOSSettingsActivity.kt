@@ -3,8 +3,8 @@ package loshica.vendor
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import loshica.vendor.databinding.LosActivitySettingsBinding
 import loshica.vendor.databinding.LosDialogAboutBinding
 import loshica.vendor.interfaces.LOSChangeSettings
@@ -14,11 +14,11 @@ import loshica.vendor.viewModel.LOSTheme
 
 class LOSSettingsActivity : AppCompatActivity(), View.OnClickListener, LOSChangeSettings {
 
-    private lateinit var themeModel: LOSTheme
     private lateinit var b: LosActivitySettingsBinding
 
+    private val themeModel: LOSTheme by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        themeModel = ViewModelProvider(this).get(LOSTheme::class.java)
         themeModel.current.value?.let { setTheme(it) }
 
         super.onCreate(savedInstanceState)

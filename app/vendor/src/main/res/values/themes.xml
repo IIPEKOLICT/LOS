@@ -36,6 +36,8 @@
     <!-- Черная тема -->
 
     <style name="LOSTheme_Black" parent="LOSTheme_BaseDark">
+        <item name="colorPrimary">?attr/colorAccent</item>
+
         <item name="mainBgColor">@color/black</item>
         <item name="secondaryBgColor">@color/lightBlack</item>
         <item name="additionalBgColor">@color/lighterBlack</item>
@@ -113,6 +115,8 @@
     <!-- Светлая тема -->
 
     <style name="LOSTheme_Light" parent="LOSTheme_BaseLight">
+        <item name="colorPrimary">?attr/colorAccent</item>
+
         <item name="mainBgColor">@color/darkerWhite</item>
         <item name="secondaryBgColor">@color/darkWhite</item>
         <item name="additionalBgColor">@color/white</item>

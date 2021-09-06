@@ -8,7 +8,8 @@ import android.view.View
 import android.widget.CheckedTextView
 import android.widget.RadioGroup
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import loshica.vendor.R
 import loshica.vendor.databinding.LosDialogAccentBinding
 import loshica.vendor.interfaces.LOSDialogChangeSettings
@@ -35,9 +36,10 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener, LOSDialogChangeS
         R.drawable.los_colored_btn_bg_white
     )
 
-    private lateinit var themeModel: LOSTheme
-    private lateinit var parentModel: LOSTheme
     private lateinit var lp: RadioGroup.LayoutParams
+
+    private val themeModel: LOSTheme by viewModels()
+    private val parentModel: LOSTheme by activityViewModels()
 
     @SuppressLint("ResourceType")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -45,8 +47,6 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener, LOSDialogChangeS
 
         _b = LosDialogAccentBinding.inflate(requireActivity().layoutInflater)
         lp = RadioGroup.LayoutParams(120, 120)
-        themeModel = ViewModelProvider(this).get(LOSTheme::class.java)
-        parentModel = ViewModelProvider(requireActivity()).get(LOSTheme::class.java)
 
         for (i in 0 until coloredBgs.size - 1) {
             val button = CheckedTextView(this.context)
