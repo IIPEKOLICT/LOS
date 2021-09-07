@@ -1,5 +1,13 @@
 # Changelog:
 
+### 2.1.2
+- new specific class for app with methods (LOSApp)
+- some improvements
+
+### 2.1.1
+- more correct styles (dialog, tablayout) 
+- some improvements
+
 ### 2.1
 - migrate to true MVVM implementation
 - migrate to view binding
