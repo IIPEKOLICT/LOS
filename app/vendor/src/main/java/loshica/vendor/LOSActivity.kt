@@ -6,13 +6,12 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import loshica.vendor.viewModel.LOSTheme
+import loshica.vendor.viewModel.LOSThemeModel
 
 open class LOSActivity : AppCompatActivity() {
     // Standart loshica os activity
 
-    private val themeModel: LOSTheme by viewModels()
+    val themeModel: LOSThemeModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Install theme, when activity created
@@ -42,5 +41,6 @@ open class LOSActivity : AppCompatActivity() {
             //
         }
         return super.onOptionsItemSelected(item)
-    } //
+    }
+    //
 }

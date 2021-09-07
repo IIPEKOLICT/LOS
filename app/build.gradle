@@ -11,8 +11,8 @@ android {
         applicationId "loshica.main"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 6
-        versionName "2.1.1"
+        versionCode build_number
+        versionName library_version
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

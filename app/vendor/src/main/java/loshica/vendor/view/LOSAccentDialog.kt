@@ -13,7 +13,7 @@ import androidx.fragment.app.viewModels
 import loshica.vendor.R
 import loshica.vendor.databinding.LosDialogAccentBinding
 import loshica.vendor.interfaces.LOSDialogChangeSettings
-import loshica.vendor.viewModel.LOSTheme
+import loshica.vendor.viewModel.LOSThemeModel
 
 class LOSAccentDialog : DialogFragment(), View.OnClickListener, LOSDialogChangeSettings {
 
@@ -38,8 +38,8 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener, LOSDialogChangeS
 
     private lateinit var lp: RadioGroup.LayoutParams
 
-    private val themeModel: LOSTheme by viewModels()
-    private val parentModel: LOSTheme by activityViewModels()
+    private val themeModel: LOSThemeModel by viewModels()
+    private val parentModel: LOSThemeModel by activityViewModels()
 
     @SuppressLint("ResourceType")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -78,7 +78,7 @@ class LOSAccentDialog : DialogFragment(), View.OnClickListener, LOSDialogChangeS
     }
 
     override fun onClick(v: View) {
-        changeSettings(LOSTheme.ACCENT_KEY, v.id)
+        changeSettings(LOSThemeModel.ACCENT_KEY, v.id)
     }
 
     override fun changeSettings(key: String, value: Int) {

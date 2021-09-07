@@ -2,25 +2,20 @@ package loshica.vendor
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import loshica.vendor.databinding.LosActivitySettingsBinding
 import loshica.vendor.databinding.LosDialogAboutBinding
 import loshica.vendor.interfaces.LOSChangeSettings
 import loshica.vendor.view.LOSAccentDialog
 import loshica.vendor.view.LOSDialogBuilder
-import loshica.vendor.viewModel.LOSTheme
+import loshica.vendor.viewModel.LOSThemeModel
 
-class LOSSettingsActivity : AppCompatActivity(), View.OnClickListener, LOSChangeSettings {
+class LOSSettingsActivity : LOSActivity(), View.OnClickListener, LOSChangeSettings {
 
     private lateinit var b: LosActivitySettingsBinding
 
-    private val themeModel: LOSTheme by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        themeModel.current.value?.let { setTheme(it) }
-
         super.onCreate(savedInstanceState)
         b = LosActivitySettingsBinding.inflate(layoutInflater)
         setContentView(b.root)
@@ -30,6 +25,8 @@ class LOSSettingsActivity : AppCompatActivity(), View.OnClickListener, LOSChange
         b.about.setOnClickListener(this)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean = false
+
     override fun onClick(v: View) {
         when (v) {
             b.accent -> LOSAccentDialog().show(supportFragmentManager, null)
@@ -38,8 +35,8 @@ class LOSSettingsActivity : AppCompatActivity(), View.OnClickListener, LOSChange
                     .setTitle(resources.getString(R.string.theme_section))
                     .setSingleChoiceItems(
                         resources.getStringArray(R.array.theme_labels),
-                        themeModel.settings.getInt(LOSTheme.THEME_KEY, 0)
-                    ) { dialog, which -> changeSettings(dialog, LOSTheme.THEME_KEY, which) }
+                        themeModel.settings.getInt(LOSThemeModel.THEME_KEY, 0)
+                    ) { dialog, which -> changeSettings(dialog, LOSThemeModel.THEME_KEY, which) }
                     .show()
             }
             else -> {

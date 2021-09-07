@@ -8,7 +8,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import loshica.vendor.R
 
-class LOSTheme(val app: Application) : AndroidViewModel(app) {
+class LOSThemeModel(val app: Application) : AndroidViewModel(app) {
 
     private val darkThemes = intArrayOf(
         R.style.LOSTheme_BlackOxygen,
@@ -41,7 +41,7 @@ class LOSTheme(val app: Application) : AndroidViewModel(app) {
 
     var settings: SharedPreferences = app.getSharedPreferences(SETTINGS, Context.MODE_PRIVATE)
 
-    val theme: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
+    private val theme: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val accent: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val current: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     val isDark: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
@@ -84,7 +84,7 @@ class LOSTheme(val app: Application) : AndroidViewModel(app) {
         val prev = current.value
         current.value = set()
 
-        if (prev != set()) activity.recreate()
+        if (current.value != prev) activity.recreate()
     }
 
     fun change(key: String, value: Int) {
