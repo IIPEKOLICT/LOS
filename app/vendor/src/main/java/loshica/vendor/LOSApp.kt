@@ -19,6 +19,7 @@ open class LOSApp : Application() {
 
     companion object {
         var json = Gson()
+        const val MONGO_ID = "_id"
 
         @SuppressLint("MissingPermission")
         fun isOnline(app: Application): Boolean {

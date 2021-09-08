@@ -1,5 +1,8 @@
 # Changelog:
 
+### 2.1.3
+- add const with mongo id field name to LOSApp
+
 ### 2.1.2
 - new specific class for app with methods (LOSApp)
 - some improvements
