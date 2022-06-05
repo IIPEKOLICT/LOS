@@ -4,9 +4,9 @@
     <!-- тема (названия+значения) -->
 
     <string-array name="theme_labels">
-        <item>Как в системе</item>
-        <item>Темная</item>
-        <item>Светлая</item>
+        <item>System</item>
+        <item>Dark</item>
+        <item>Light</item>
     </string-array>
     <integer-array name="theme_values">
         <item>0</item>
